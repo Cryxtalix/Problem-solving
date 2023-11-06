@@ -30,5 +30,6 @@ bool is_invalid(Group my_group);
 bool is_filled(Group my_group);
 void get_missing_numbers(Group my_group, Missing_Numbers *missing);
 int check_board(Board my_board);
+int get_total_empty_cells(Board my_board);
 
 #endif //LIBRARY

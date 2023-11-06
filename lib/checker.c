@@ -160,3 +160,16 @@ Invalid:
         perror("Board is invalid.");
         return -1;
 }
+
+int get_total_empty_cells(Board my_board)
+{
+        int total = 0;
+        for (int row = 0; row < 9; row++) {
+                for (int column = 0; column < 9; column++) {
+                        if (my_board[column][row] == 0) {
+                                total += 1;
+                        }
+                }
+        }
+        return total;
+}
