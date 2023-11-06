@@ -8,17 +8,7 @@ int main(int argc, char *argv[])
 
         write_board(myBoard);
 
-        Group grp;
-        get_row(1, myBoard, grp);
-
-        Missing_Numbers test;
-        get_missing_numbers(grp, &test);
-
-        printf("There are %d missing numbers.\n", test.Amount);
-
-        for (int i = 0; i < test.Amount; i++) {
-                printf("%d", test.Array[i]);
-        }
+        printf("%d\n", check_board(myBoard));
 
         return 0;
 }

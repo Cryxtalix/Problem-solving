@@ -82,9 +82,10 @@ void get_9x9(int grid_num, Board myBoard, Group arr)
         }
 }
 
-void check_board(Board my_board)
+int check_board(Board my_board)
 {
         Group tmp_grp;
+        uint8_t score = 0;
 
         // Check columns
         for (int i = 0; i < 9; i++) {
@@ -93,10 +94,39 @@ void check_board(Board my_board)
                         goto Invalid;
                 }
                 if (is_filled(tmp_grp) == 1) {
-
+                        score += 1;
                 }
+        }
+
+        // Check rows
+        for (int i = 0; i < 9; i++) {
+                get_row(i, my_board, tmp_grp);
+                if (is_invalid(tmp_grp) == 1) {
+                        goto Invalid;
+                }
+                if (is_filled(tmp_grp) == 1) {
+                        score += 1;
+                }
+        }
+
+        // Check 9x9
+        for (int i = 0; i < 9; i++) {
+                get_9x9(i, my_board, tmp_grp);
+                if (is_invalid(tmp_grp) == 1) {
+                        goto Invalid;
+                }
+                if (is_filled(tmp_grp) == 1) {
+                        score += 1;
+                }
+        }
+
+        if (score < 27) {
+                return 0;
+        } else {
+                return 1;
         }
 
 Invalid:
         perror("Board is invalid.");
+        return -1;
 }

@@ -28,6 +28,6 @@ void get_9x9(int grid_num, Board myBoard, Group arr);
 bool is_invalid(Group my_group);
 bool is_filled(Group my_group);
 void get_missing_numbers(Group my_group, Missing_Numbers *missing);
-void check_board(Board my_board);
+int check_board(Board my_board);
 
 #endif //LIBRARY
