@@ -65,12 +65,20 @@ void get_row(int row_num, Board myBoard, Group arr)
         }
 }
 
+/**
+ * @brief Get the numbers within the 9x9 square.
+ * From left to right, top to bottom, counting from 0.
+ * 
+ * @param grid_num 
+ * @param myBoard 
+ * @param arr 
+ */
 void get_9x9(int grid_num, Board myBoard, Group arr)
 {
         // Get coordinates
-        int coordinates[3][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
-        int *columns = coordinates[grid_num % 3];
-        int *rows = coordinates[grid_num / 3];
+        const int coordinates[3][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
+        const int *columns = coordinates[grid_num % 3];
+        const int *rows = coordinates[grid_num / 3];
 
         // Loop
         int cnt = 0;
@@ -82,6 +90,28 @@ void get_9x9(int grid_num, Board myBoard, Group arr)
         }
 }
 
+/**
+ * @brief Get grid number from coordinates
+ * 
+ * @param column 
+ * @param row 
+ * @return int 
+ */
+int get_grid_num(int column, int row)
+{
+        const int coordinates[3][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
+        int grid_row = row / 3;
+        int grid_col = column / 3;
+
+        return coordinates[grid_row][grid_col];
+}
+
+/**
+ * @brief Checks state of the board
+ * 
+ * @param my_board 
+ * @return Int 0: Incomplete, 1: Complete, -1: Invalid
+ */
 int check_board(Board my_board)
 {
         Group tmp_grp;

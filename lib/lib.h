@@ -23,6 +23,7 @@ void write_board(Board my_board);
 void get_column(int column_num, Board myBoard, Group arr);
 void get_row(int row_num, Board myBoard, Group arr);
 void get_9x9(int grid_num, Board myBoard, Group arr);
+int get_grid_num(int column, int row);
 
 // Check board
 bool is_invalid(Group my_group);
