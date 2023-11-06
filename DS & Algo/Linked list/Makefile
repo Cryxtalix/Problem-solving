@@ -3,7 +3,7 @@ CFLAGS := -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wstrict-prototypes -fan
 DEBUG := -g
 
 ll: ll1.c
-	@$(CC) ll1.c $(CFLAGS) -o linkedlist
+	@$(CC) ll1.c $(CFLAGS) -o linkedlist.out
 
 debug: ll1.c
-	@$(CC) ll1.c $(CFLAGS) $(DEBUG) -o linkedlist_debug
+	@$(CC) ll1.c $(CFLAGS) $(DEBUG) -o linkedlist_debug.out
