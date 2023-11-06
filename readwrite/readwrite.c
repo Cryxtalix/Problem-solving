@@ -5,10 +5,7 @@ void read_board(Board *my_board, char *path)
         FILE *fp = fopen(path, "r");
 
         if (fp == NULL) {
-                int errnum = errno;
-                fprintf(stderr, "Value of errno: %d\n", errno);
-                perror("Error printed by perror");
-                fprintf(stderr, "Error opening file: %s\n", strerror( errnum ));
+                perror("Error reading board");
         }
 
         for (int row = 0; row < 9; row++) {
@@ -31,10 +28,7 @@ void read_board(Board *my_board, char *path)
 void write_board(Board *my_board) {
         FILE *fp = fopen("output/solution.txt", "w");
         if (fp == NULL) {
-                int errnum = errno;
-                fprintf(stderr, "Value of errno: %d\n", errno);
-                perror("Error printed by perror");
-                fprintf(stderr, "Error writing to file: %s\n", strerror( errnum ));
+                perror("Error writing board");
         }
 
         for (int row = 0; row < 9; row++) {
