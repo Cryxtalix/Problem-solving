@@ -8,6 +8,8 @@
 #include <errno.h>
 #include <stdbool.h>
 
+//#define DEBUG 1
+
 typedef uint8_t Board[9][9];
 typedef uint8_t Group[9];
 typedef struct Missing_Numbers{
@@ -18,6 +20,7 @@ typedef struct Missing_Numbers{
 // Input / Output
 void read_board(Board my_board, char *path);
 void write_board(Board my_board);
+void print_board_terminal(Board my_board);
 
 // Get groups
 void get_column(int column_num, Board myBoard, Group arr);

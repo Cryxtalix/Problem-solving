@@ -76,7 +76,7 @@ void search_pass(void)
 
 int main(int argc, char *argv[])
 {
-        read_board(myBoard, "./input1.txt");
+        read_board(myBoard, "./input.txt");
         int empty_cell_count = get_total_empty_cells(myBoard);
         int new_emtpy_cell_count = 81;
         
@@ -90,14 +90,13 @@ int main(int argc, char *argv[])
         if (check_board(myBoard) == 1) {
                 printf("Puzzle solved! Check the output folder for the txt file.\n");
                 write_board(myBoard);
-        } else {
-                for (int row = 0; row < 9; row++) {
-                        for (int column = 0; column < 9; column++) {
-                                printf("%d", myBoard[column][row]);
-                        }
-                        printf("\n");
-                }
+        } 
+
+#ifdef DEBUG
+        else {
+                print_board_terminal(myBoard);
         }
+#endif //DEBUG
 
         return 0;
 }
