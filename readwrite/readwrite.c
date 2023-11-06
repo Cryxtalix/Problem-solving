@@ -27,3 +27,22 @@ void read_board(Board *my_board, char *path)
 
         fclose(fp);
 }
+
+void write_board(Board *my_board) {
+        FILE *fp = fopen("output/solution.txt", "w");
+        if (fp == NULL) {
+                int errnum = errno;
+                fprintf(stderr, "Value of errno: %d\n", errno);
+                perror("Error printed by perror");
+                fprintf(stderr, "Error writing to file: %s\n", strerror( errnum ));
+        }
+
+        for (int row = 0; row < 9; row++) {
+                for (int column = 0; column < 9; column++) {
+                        fprintf(fp, "%d", my_board->data[column][row]);
+                }
+                fprintf(fp, "\n");
+        }
+
+        fclose(fp);
+}

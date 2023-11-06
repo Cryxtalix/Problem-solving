@@ -1,5 +1,5 @@
-#ifndef INPUT
-#define INPUT
+#ifndef RW
+#define RW
 
 #include <stdio.h>
 #include <stdint.h>
@@ -13,4 +13,6 @@ typedef struct {
 
 void read_board(Board *my_board, char *path);
 
-#endif //INPUT
+void write_board(Board *my_board);
+
+#endif //RW

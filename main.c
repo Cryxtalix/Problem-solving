@@ -15,13 +15,7 @@ int main(int argc, char *argv[])
 
         read_board(myBoard, "./input.txt");
 
-        for (int column = 0; column < 9; column++) {
-                for (int row = 0; row < 9; row++) {
-                        printf("%d", myBoard->data[row][column]);
-                }
-                printf("\n");
-        }
-        printf("\n");
+        write_board(myBoard);
 
         free(myBoard);
         return 0;
