@@ -1,6 +1,6 @@
 CC=gcc
 
 test:
-	@$(CC) main.c readwrite/readwrite.c -o testing
+	@$(CC) main.c lib/readwrite.c -o testing
 	@./testing
 	@rm -f testing

@@ -1,6 +1,6 @@
 #include "lib.h"
 
-void read_board(Board *my_board, char *path)
+void read_board(Board my_board, char *path)
 {
         FILE *fp = fopen(path, "r");
 
@@ -16,7 +16,7 @@ void read_board(Board *my_board, char *path)
                         if (tmp[0] == '\n') {
                                 continue;
                         } else {
-                                my_board->data[column][row] = atoi(tmp);
+                                my_board[column][row] = atoi(tmp);
                         }
                         
                 }
@@ -25,7 +25,7 @@ void read_board(Board *my_board, char *path)
         fclose(fp);
 }
 
-void write_board(Board *my_board) {
+void write_board(Board my_board) {
         FILE *fp = fopen("output/solution.txt", "w");
         if (fp == NULL) {
                 perror("Error writing board");
@@ -33,7 +33,7 @@ void write_board(Board *my_board) {
 
         for (int row = 0; row < 9; row++) {
                 for (int column = 0; column < 9; column++) {
-                        fprintf(fp, "%d", my_board->data[column][row]);
+                        fprintf(fp, "%d", my_board[column][row]);
                 }
                 fprintf(fp, "\n");
         }

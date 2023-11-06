@@ -7,12 +7,10 @@
 #include <string.h>
 #include <errno.h>
 
-typedef struct {
-        uint8_t data[9][9];
-}Board;
+typedef uint8_t Board[9][9];
 
-void read_board(Board *my_board, char *path);
+void read_board(Board my_board, char *path);
 
-void write_board(Board *my_board);
+void write_board(Board my_board);
 
 #endif //LIBRARY
