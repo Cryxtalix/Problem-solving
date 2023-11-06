@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdint.h>
-#include "readwrite/readwrite.h"
+#include "lib/lib.h"
 
 int main(int argc, char *argv[])
 {

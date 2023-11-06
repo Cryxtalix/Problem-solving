@@ -1,4 +1,4 @@
-#include "readwrite.h"
+#include "lib.h"
 
 void read_board(Board *my_board, char *path)
 {

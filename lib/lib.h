@@ -1,5 +1,5 @@
-#ifndef RW
-#define RW
+#ifndef LIBRARY
+#define LIBRARY
 
 #include <stdio.h>
 #include <stdint.h>
@@ -15,4 +15,4 @@ void read_board(Board *my_board, char *path);
 
 void write_board(Board *my_board);
 
-#endif //RW
+#endif //LIBRARY
