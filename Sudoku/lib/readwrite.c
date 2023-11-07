@@ -25,8 +25,10 @@ void read_board(Board my_board, char *path)
         fclose(fp);
 }
 
-void write_board(Board my_board) {
-        FILE *fp = fopen("output/solution.txt", "w");
+void write_board(Board my_board, char *filename) {
+        char new_path[50];
+        snprintf(new_path, 50, "output/%s", filename);
+        FILE *fp = fopen(new_path, "w");
         if (fp == NULL) {
                 perror("Error writing board");
         }

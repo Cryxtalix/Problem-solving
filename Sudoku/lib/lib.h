@@ -19,7 +19,7 @@ typedef struct Missing_Numbers{
 
 // Input / Output
 void read_board(Board my_board, char *path);
-void write_board(Board my_board);
+void write_board(Board my_board, char *filename);
 void print_board_terminal(Board my_board);
 
 // Get groups
