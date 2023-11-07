@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-//#define DEBUG 1
+#define DEBUG 1
 
 typedef uint8_t Board[9][9];
 typedef uint8_t Group[9];
@@ -25,7 +25,7 @@ void print_board_terminal(Board my_board);
 // Get groups
 void get_column(int column_num, Board myBoard, Group arr);
 void get_row(int row_num, Board myBoard, Group arr);
-void get_9x9(int grid_num, Board myBoard, Group arr);
+void get_3x3(int grid_num, Board myBoard, Group arr);
 int get_grid_num(int column, int row);
 
 // Check board

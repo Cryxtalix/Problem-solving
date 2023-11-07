@@ -66,14 +66,14 @@ void get_row(int row_num, Board myBoard, Group arr)
 }
 
 /**
- * @brief Get the numbers within the 9x9 square.
+ * @brief Get the numbers within the 3x3 square.
  * From left to right, top to bottom, counting from 0.
  * 
  * @param grid_num 
  * @param myBoard 
  * @param arr 
  */
-void get_9x9(int grid_num, Board myBoard, Group arr)
+void get_3x3(int grid_num, Board myBoard, Group arr)
 {
         // Get coordinates
         const int coordinates[3][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
@@ -139,9 +139,9 @@ int check_board(Board my_board)
                 }
         }
 
-        // Check 9x9
+        // Check 3x3
         for (int i = 0; i < 9; i++) {
-                get_9x9(i, my_board, tmp_grp);
+                get_3x3(i, my_board, tmp_grp);
                 if (is_invalid(tmp_grp) == 1) {
                         goto Invalid;
                 }

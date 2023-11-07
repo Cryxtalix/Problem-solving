@@ -40,7 +40,7 @@ void find_repeated_num(Missing_Numbers *one, Missing_Numbers *two, Missing_Numbe
         }
 }
 
-void search_pass(void)
+void one_solution_pass(void)
 {
         Group tmp1;
         Group tmp2;
@@ -61,7 +61,7 @@ void search_pass(void)
                                 get_row(row, myBoard, tmp2);
                                 get_missing_numbers(tmp2, &miss2);
 
-                                get_9x9(get_grid_num(column, row), myBoard, tmp3);
+                                get_3x3(get_grid_num(column, row), myBoard, tmp3);
                                 get_missing_numbers(tmp3, &miss3);
 
                                 find_repeated_num(&miss1, &miss2, &miss3, &found_values);
@@ -83,20 +83,19 @@ int main(int argc, char *argv[])
 
         do {
                 empty_cell_count = new_emtpy_cell_count;
-                search_pass();
+                one_solution_pass();
                 new_emtpy_cell_count = get_total_empty_cells(myBoard);
         } while(check_board(myBoard) == 0 && new_emtpy_cell_count < empty_cell_count);
 
-        if (check_board(myBoard) == 1) {
+        /* if (check_board(myBoard) == 1) {
                 printf("Puzzle solved! Check the output folder for the txt file.\n");
                 write_board(myBoard);
-        } 
+        } */
 
-#ifdef DEBUG
-        else {
-                print_board_terminal(myBoard);
+        if (check_board(myBoard) == 0) {
+                // Board likely has multiple solutions
+
         }
-#endif //DEBUG
 
         return 0;
 }
