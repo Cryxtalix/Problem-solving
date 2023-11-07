@@ -10,3 +10,9 @@
 * Dedicated input folder
 * Enter file name through commands
 * Tests
+
+### Comments
+* Avoids using heap memory(no malloc).
+* Filenames are limited to about 40 characters.
+* Judicious use of "goto" in check_board() function, only used for escaping multiple loops.
+* Use of a recursion function to guess inputs. Sudoku puzzle in "input2.txt" takes 9 recursion levels just to find the single solution.
